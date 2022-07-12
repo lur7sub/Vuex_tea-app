@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "滷肉飯",
+    "price": 30,
+    "type": "飯類",
+    "recommended": true
+  },
+  {
+    "id": 2,
+    "name": "雞肉飯",
+    "price": 30,
+    "type": "飯類",
+    "recommended": false
+  },
+  {
+    "id": 3,
+    "name": "瓜子肉飯",
+    "price": 35,
+    "type": "飯類",
+    "recommended": false
+  },
+  {
+    "id": 4,
+    "name": "乾麵",
+    "price": 40,
+    "type": "麵類",
+    "recommended": false
+  },
+  {
+    "id": 5,
+    "name": "麻醬麵",
+    "price": 45,
+    "type": "麵類",
+    "recommended": true
+  },
+  {
+    "id": 6,
+    "name": "牛肉麵",
+    "price": 120,
+    "type": "麵類",
+    "recommended": true
+  }
+]
