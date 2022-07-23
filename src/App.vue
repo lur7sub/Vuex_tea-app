@@ -1,23 +1,22 @@
 <template>
   <nav>
-    <header class="top-bar spread">
+    <header class="d-flex">
       <nav class="top-bar-nav">
         <!-- 推薦 -->
         <router-link to="/" class="top-bar-link">
-          <i class="icofont-spoon-and-fork"></i>
-          <span>推薦</span>
+          <span>熱門商品</span>
         </router-link>
         |
         <!-- 菜單 -->
         <router-link to="/products" class="top-bar-link">
-          <span>菜單</span>
+          <span>全品項</span>
         </router-link>
       </nav>
       <!-- 購物車 -->
       <div @click="toggleSidebar" class="top-bar-cart-link">
         <i class="icofont-cart-alt icofont-1x"></i>
         <!-- Cart(0) -->
-        <span>購物車 ({{ totalQuantity }})</span>
+        <p>購物車{{ totalQuantity }}</p>
       </div>
     </header>
   </nav>

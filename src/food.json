@@ -1,44 +1,44 @@
 [
   {
     "id": 1,
-    "name": "滷肉飯",
+    "name": "獅峰龍井",
     "price": 30,
-    "type": "飯類",
+    "type": "綠茶",
     "recommended": true
   },
   {
     "id": 2,
-    "name": "雞肉飯",
+    "name": "福鼎白茶",
     "price": 30,
-    "type": "飯類",
+    "type": "白茶",
     "recommended": false
   },
   {
     "id": 3,
-    "name": "瓜子肉飯",
+    "name": "東方美人",
     "price": 35,
-    "type": "飯類",
+    "type": "烏龍茶",
     "recommended": false
   },
   {
     "id": 4,
-    "name": "乾麵",
+    "name": "老斑樟",
     "price": 40,
-    "type": "麵類",
+    "type": "普洱茶",
     "recommended": false
   },
   {
     "id": 5,
-    "name": "麻醬麵",
+    "name": "台東紅烏龍",
     "price": 45,
-    "type": "麵類",
+    "type": "紅茶",
     "recommended": true
   },
   {
     "id": 6,
-    "name": "牛肉麵",
+    "name": "日月潭紅玉",
     "price": 120,
-    "type": "麵類",
+    "type": "紅茶",
     "recommended": true
   }
 ]
