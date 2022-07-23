@@ -1,5 +1,5 @@
 <template>
-  <main class="wrapper">
+  <div class="container">
     <h2>全部商品</h2>
     <!-- 回傳一個新陣列 .slice(begin,end)不含(end) -->
     <ProductCard
@@ -7,9 +7,8 @@
       :key="product.id"
       :product="product"
       :addToCart="addToCart"
-      class="card"
     />
-  </main>
+  </div>
 </template>
 
 <script>
