@@ -26,7 +26,7 @@
           </div>
           <div class="cell">
             <!-- 輸入值 -->
-            <input type="number" v-model.number="quantity" />
+            <input class="text-center" v-model.number="quantity" />
           </div>
         </div>
       </form>

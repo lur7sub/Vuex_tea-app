@@ -1,5 +1,6 @@
 <template>
   <nav>
+    <button @click="this.$store.dispatch('getWeather')">取得天氣</button>
     <header class="d-flex">
       <nav class="navlink">
         <!-- 推薦 -->
