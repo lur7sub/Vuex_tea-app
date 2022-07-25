@@ -7,9 +7,9 @@ export default createStore({
   mutations: {},
   actions: {
     getWeather() {
-      const yyyy = new Date().getFullYear().toString();
-      const mm = ("0" + (new Date().getMonth() + 1)).toString();
-      const dd = new Date().getDate().toString();
+      const yyyy = new Date().getFullYear();
+      const mm = "0" + (new Date().getMonth() + 1);
+      const dd = new Date().getDate() + 1;
       const today = `https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-13748D92-B0B0-42F6-BAD1-04932D02398A&format=JSON&locationName=%E8%87%BA%E5%8C%97%E5%B8%82&elementName=&startTime=${yyyy}-${mm}-${dd}T06%3A00%3A00`;
       axios.get(today).then((response) => {
         console.log(
