@@ -1,7 +1,7 @@
 <template>
-  <div class="container px-5">
-    <h2 v-if="$store.state.maxT > 24" class="m-0 p-0">春夏茶款</h2>
-    <h2 v-else class="m-0 p-0">秋冬茶款</h2>
+  <div class="container">
+    <h2 v-if="$store.state.maxT > 24" class="my-3 p-0">春夏茶款</h2>
+    <h2 v-else class="my-3 p-0">秋冬茶款</h2>
     <div class="row">
       <!-- card -->
       <!-- product就是food.json的資料 -->

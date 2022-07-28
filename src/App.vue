@@ -1,17 +1,18 @@
 <template>
   <div class="d-flex justify-content-around py-3 navbar">
     <div>
-      <!-- 推薦 -->
-      <router-link to="/" class="text-dark">
+      <!-- 當季推薦 -->
+      <router-link to="/" class="nav-text text-white">
         <span>宜飲茶款</span>
       </router-link>
-      <span class="mx-3">|</span>
-      <!-- 菜單 -->
-      <router-link to="/products" class="text-dark">
+      <span class="mx-3 nav-text text-white">|</span>
+      <!-- 全部 -->
+      <router-link to="/products" class="nav-text text-white">
         <span>全部品項</span>
       </router-link>
     </div>
-    <div class="weather-view">
+    <!-- 氣象API -->
+    <div class="weather-view text-white">
       <span>
         <span class="mx-2">{{ $store.state.weatherState }}</span>
         <span class="mx-2"
@@ -20,10 +21,7 @@
         </span>
         <span class="mx-2">{{ $store.state.weatherDesc }}</span>
         <span class="mx-2">
-          <font-awesome-icon
-            icon="fa-solid fa-cloud-rain"
-            class="font-awesome-color"
-          />
+          <font-awesome-icon icon="fa-solid fa-cloud-rain" class="text-white" />
           {{ $store.state.pop }}%</span
         >
       </span>
@@ -31,10 +29,10 @@
     <!-- 購物車 -->
     <div @click="toggleSidebar" class="cart-handler">
       <!-- Cart(0) -->
-      <span>
+      <span class="text-white nav-text">
         <font-awesome-icon
           icon="fa-solid fa-cart-shopping"
-          class="font-awesome-color"
+          class="text-white"
         />
         購物車({{ totalQuantity }})
       </span>
@@ -42,7 +40,7 @@
   </div>
 
   <!-- 因為是動態的 所以屬性要傳下去 -->
-  <router-view :inventory="inventory" :addToCart="addToCart" class="my-5" />
+  <router-view :inventory="inventory" :addToCart="addToCart" />
   <!-- 側欄 -->
   <Sidebar
     v-if="showSidebar"
@@ -65,8 +63,6 @@ export default {
   },
   data() {
     return {
-      // JSON資料
-      // { "id": 1,  "name": "Raddishes",   "icon": "raddish",    "price": { "USD": 3.26, "NOK": 17.43 }, "type": "vegetable" }
       inventory: food,
       // Sidebar開關
       showSidebar: false,
@@ -102,9 +98,6 @@ export default {
     removeItem(name) {
       delete this.cart[name];
     },
-  },
-  mounted() {
-    this.$store.dispatch("getWeather");
   },
 };
 </script>

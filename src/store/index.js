@@ -1,15 +1,27 @@
 import { createStore } from "vuex";
 import axios from "axios";
+import createPersistedState from "vuex-persistedstate";
+
+// 引用JSON資料
+import food from "../food.json";
 
 export default createStore({
+  plugins: [createPersistedState()],
   state: {
+    // 商品
+    inventory: food,
+    // 購物車
+    cart: {},
+    // 天氣
     weatherState: "",
     weatherDesc: "",
     pop: "",
     minT: "",
     maxT: "",
   },
-  getters: {},
+  getters: {
+    // totalQuantity
+  },
   mutations: {
     getWeather(state, data) {
       state.weatherState =
@@ -31,6 +43,8 @@ export default createStore({
         commit("getWeather", response.data.records.location[0]);
       });
     },
+    // addToCart
+    // removeItem
   },
   modules: {},
 });

@@ -1,5 +1,12 @@
 [
   {
+    "id": 5,
+    "name": "鹿野紅烏龍",
+    "price": 1000,
+    "type": "紅茶",
+    "property": "冬天"
+  },
+  {
     "id": 2,
     "name": "福鼎白茶",
     "price": 375,
@@ -7,10 +14,10 @@
     "property": "夏天"
   },
   {
-    "id": 3,
-    "name": "東方美人",
-    "price": 2500,
-    "type": "烏龍茶",
+    "id": 6,
+    "name": "日月潭紅玉",
+    "price": 1250,
+    "type": "紅茶",
     "property": "冬天"
   },
   {
@@ -21,24 +28,17 @@
     "property": "夏天"
   },
   {
+    "id": 3,
+    "name": "東方美人",
+    "price": 2500,
+    "type": "烏龍茶",
+    "property": "冬天"
+  },
+  {
     "id": 1,
     "name": "三峽碧螺春",
     "price": 450,
     "type": "綠茶",
     "property": "夏天"
-  },
-  {
-    "id": 5,
-    "name": "鹿野紅烏龍",
-    "price": 1000,
-    "type": "紅茶",
-    "property": "冬天"
-  },
-  {
-    "id": 6,
-    "name": "日月潭紅玉",
-    "price": 1250,
-    "type": "紅茶",
-    "property": "冬天"
   }
 ]

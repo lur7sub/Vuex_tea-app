@@ -1,6 +1,9 @@
 .add-to-cart {
     position: relative;
-    left: 4rem;
+    left: 3rem;
+    background-color: #BC9F77;
+    color: white;
+    font-weight: 1000;
 }
 
 .card-img:hover {
@@ -9,5 +12,11 @@
 
 .card-img {
     transition: all 0.6s ease;
-    border-radius: 50%
+    border-radius: 50%;
+}
+
+.card-btn {
+    background-color: #B5CAA0;
+    color: white;
+    font-weight: bolder;
 }

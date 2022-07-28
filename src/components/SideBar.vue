@@ -2,11 +2,8 @@
   <aside class="cart-container">
     <div class="cart">
       <!-- Cart title -->
-      <h1 class="cart-title spread">
-        <span>
-          訂單
-          <i class="icofont-cart-alt icofont-1x"></i>
-        </span>
+      <h1 class="cart-title">
+        <span class="my-3"> 訂單 </span>
         <!-- x-btn -->
         <button @click="toggle" class="cart-close">x</button>
       </h1>
