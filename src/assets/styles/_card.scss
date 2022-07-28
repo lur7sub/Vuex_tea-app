@@ -1,0 +1,13 @@
+.add-to-cart {
+    position: relative;
+    left: 4rem;
+}
+
+.card-img:hover {
+    opacity: 0.8;
+}
+
+.card-img {
+    transition: all 0.6s ease;
+    border-radius: 50%
+}

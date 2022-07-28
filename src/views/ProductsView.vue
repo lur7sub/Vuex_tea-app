@@ -1,13 +1,15 @@
 <template>
-  <div class="container">
-    <h2>全部商品</h2>
+  <div class="container px-5">
+    <h2 class="m-0 p-0">全部商品</h2>
     <!-- 回傳一個新陣列 .slice(begin,end)不含(end) -->
-    <ProductCard
-      v-for="product in inventory.slice(0, 6)"
-      :key="product.id"
-      :product="product"
-      :addToCart="addToCart"
-    />
+    <div class="row">
+      <ProductCard
+        v-for="product in inventory.slice(0, 6)"
+        :key="product.id"
+        :product="product"
+        :addToCart="addToCart"
+      />
+    </div>
   </div>
 </template>
 

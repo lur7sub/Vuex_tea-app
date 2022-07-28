@@ -1,44 +1,44 @@
 [
   {
-    "id": 1,
-    "name": "獅峰龍井",
-    "price": 30,
-    "type": "綠茶",
-    "recommended": true
-  },
-  {
     "id": 2,
     "name": "福鼎白茶",
-    "price": 30,
+    "price": 375,
     "type": "白茶",
-    "recommended": false
+    "property": "夏天"
   },
   {
     "id": 3,
     "name": "東方美人",
-    "price": 35,
+    "price": 2500,
     "type": "烏龍茶",
-    "recommended": false
+    "property": "冬天"
   },
   {
     "id": 4,
-    "name": "老斑樟",
-    "price": 40,
-    "type": "普洱茶",
-    "recommended": false
+    "name": "文山包種茶",
+    "price": 450,
+    "type": "烏龍茶",
+    "property": "夏天"
+  },
+  {
+    "id": 1,
+    "name": "三峽碧螺春",
+    "price": 450,
+    "type": "綠茶",
+    "property": "夏天"
   },
   {
     "id": 5,
-    "name": "台東紅烏龍",
-    "price": 45,
+    "name": "鹿野紅烏龍",
+    "price": 1000,
     "type": "紅茶",
-    "recommended": true
+    "property": "冬天"
   },
   {
     "id": 6,
     "name": "日月潭紅玉",
-    "price": 120,
+    "price": 1250,
     "type": "紅茶",
-    "recommended": true
+    "property": "冬天"
   }
 ]

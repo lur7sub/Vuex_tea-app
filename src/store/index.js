@@ -2,42 +2,33 @@ import { createStore } from "vuex";
 import axios from "axios";
 
 export default createStore({
-  state: {},
+  state: {
+    weatherState: "",
+    weatherDesc: "",
+    pop: "",
+    minT: "",
+    maxT: "",
+  },
   getters: {},
-  mutations: {},
+  mutations: {
+    getWeather(state, data) {
+      state.weatherState =
+        data.weatherElement[0].time[0].parameter.parameterName;
+      state.pop = data.weatherElement[1].time[0].parameter.parameterName;
+      state.minT = data.weatherElement[2].time[0].parameter.parameterName;
+      state.weatherDesc =
+        data.weatherElement[3].time[0].parameter.parameterName;
+      state.maxT = data.weatherElement[4].time[0].parameter.parameterName;
+    },
+  },
   actions: {
-    getWeather() {
+    getWeather({ commit }) {
       const yyyy = new Date().getFullYear();
       const mm = "0" + (new Date().getMonth() + 1);
       const dd = new Date().getDate() + 1;
       const today = `https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-13748D92-B0B0-42F6-BAD1-04932D02398A&format=JSON&locationName=%E8%87%BA%E5%8C%97%E5%B8%82&elementName=&startTime=${yyyy}-${mm}-${dd}T06%3A00%3A00`;
       axios.get(today).then((response) => {
-        console.log(
-          response.data.records.location[0].weatherElement[0].time[0].parameter
-            .parameterName
-          // 晴天
-        );
-        console.log(
-          response.data.records.location[0].weatherElement[1].time[0].parameter
-            .parameterName
-          // 降雨機率
-        );
-        console.log(
-          response.data.records.location[0].weatherElement[2].time[0].parameter
-            .parameterName
-          // 最低溫度
-        );
-        console.log(
-          response.data.records.location[0].weatherElement[3].time[0].parameter
-            .parameterName
-          // 天氣描述
-        );
-        console.log(
-          response.data.records.location[0].weatherElement[4].time[0].parameter
-            .parameterName
-          // 最高溫
-        );
-        // commit("getWeather", response.data);
+        commit("getWeather", response.data.records.location[0]);
       });
     },
   },

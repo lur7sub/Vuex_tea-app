@@ -1,39 +1,28 @@
 <template>
   <!-- product就是food.json的資料 -->
-  <div class="card">
-    <!-- card title -->
-    <div class="card-title">{{ product.name }}</div>
-    <!-- card body -->
+  <div class="card col-4 mt-5">
     <div class="card-body">
-      <form>
-        <div class="row">
-          <div class="cell">
-            <label>類別：</label>
-          </div>
-          <div class="cell">
-            <em>{{ product.type }}</em>
-          </div>
-        </div>
-        <div class="row">
-          <div class="cell">
-            <label>單價：</label>
-          </div>
-          <div class="cell">${{ product.price }}</div>
-        </div>
-        <div class="row">
-          <div class="cell">
-            <label>數量：</label>
-          </div>
-          <div class="cell">
-            <!-- 輸入值 -->
-            <input class="text-center" v-model.number="quantity" />
-          </div>
-        </div>
-      </form>
-    </div>
-    <div class="card-footer">
-      <!-- addToCart() -->
-      <button @click="addToCart(product.name, quantity)" class="btn btn-light">
+      <div class="text-center">
+        <img
+          :src="require(`../assets/img/${product.id}.jpg`)"
+          class="card-img-top card-img w-50"
+        />
+      </div>
+      <div class="card-text my-4">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <h6>類別： {{ product.type }}</h6>
+        <h6>單價： {{ product.price }} / 75g</h6>
+      </div>
+      <input
+        class="text-center w-25"
+        v-model.number="quantity"
+        placeholder="數量"
+        @keyup.enter="addToCart(product.name, quantity)"
+      />
+      <button
+        @click="addToCart(product.name, quantity)"
+        class="btn btn-secondary add-to-cart"
+      >
         加入購物車
       </button>
     </div>

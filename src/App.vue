@@ -1,27 +1,48 @@
 <template>
-  <nav>
-    <button @click="this.$store.dispatch('getWeather')">取得天氣</button>
-    <header class="d-flex">
-      <nav class="navlink">
-        <!-- 推薦 -->
-        <router-link to="/" class="">
-          <span>熱門商品</span>
-        </router-link>
-        <span class="mx-3">|</span>
-        <!-- 菜單 -->
-        <router-link to="/products" class="">
-          <span>全品項</span>
-        </router-link>
-      </nav>
-      <!-- 購物車 -->
-      <div @click="toggleSidebar" class="cartHandler">
-        <!-- Cart(0) -->
-        <span>購物車({{ totalQuantity }})</span>
-      </div>
-    </header>
-  </nav>
+  <div class="d-flex justify-content-around py-3 navbar">
+    <div>
+      <!-- 推薦 -->
+      <router-link to="/" class="text-dark">
+        <span>宜飲茶款</span>
+      </router-link>
+      <span class="mx-3">|</span>
+      <!-- 菜單 -->
+      <router-link to="/products" class="text-dark">
+        <span>全部品項</span>
+      </router-link>
+    </div>
+    <div class="weather-view">
+      <span>
+        <span class="mx-2">{{ $store.state.weatherState }}</span>
+        <span class="mx-2"
+          >{{ $store.state.minT }}<span>-</span>{{ $store.state.maxT
+          }}<span>℃</span>
+        </span>
+        <span class="mx-2">{{ $store.state.weatherDesc }}</span>
+        <span class="mx-2">
+          <font-awesome-icon
+            icon="fa-solid fa-cloud-rain"
+            class="font-awesome-color"
+          />
+          {{ $store.state.pop }}%</span
+        >
+      </span>
+    </div>
+    <!-- 購物車 -->
+    <div @click="toggleSidebar" class="cart-handler">
+      <!-- Cart(0) -->
+      <span>
+        <font-awesome-icon
+          icon="fa-solid fa-cart-shopping"
+          class="font-awesome-color"
+        />
+        購物車({{ totalQuantity }})
+      </span>
+    </div>
+  </div>
+
   <!-- 因為是動態的 所以屬性要傳下去 -->
-  <router-view :inventory="inventory" :addToCart="addToCart" />
+  <router-view :inventory="inventory" :addToCart="addToCart" class="my-5" />
   <!-- 側欄 -->
   <Sidebar
     v-if="showSidebar"
@@ -81,6 +102,9 @@ export default {
     removeItem(name) {
       delete this.cart[name];
     },
+  },
+  mounted() {
+    this.$store.dispatch("getWeather");
   },
 };
 </script>
