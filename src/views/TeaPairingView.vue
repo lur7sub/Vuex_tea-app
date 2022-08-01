@@ -1,5 +1,5 @@
 <template>
-  <div>餐茶配</div>
+  <div></div>
 </template>
 <script>
 export default {};

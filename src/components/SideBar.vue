@@ -1,13 +1,13 @@
 <template>
-  <aside class="cart">
+  <aside class="cart text-white font-weight-bold">
     <!-- 標題 -->
     <h1 class="cart-title">
       <span>訂單</span>
       <!-- 退出 -->
-      <button @click="toggle" class="cart-close">x</button>
+      <button @click="toggle" class="cart-close text-white">x</button>
     </h1>
     <!-- 表格 -->
-    <div class="mt-4">
+    <div class="mt-4 p-relative">
       <table class="cart-table">
         <thead v-if="Object.keys($store.state.cart).length">
           <tr>
@@ -39,7 +39,7 @@
             <td>
               <button
                 @click="$store.commit('removeItem', item)"
-                class="btn cart-remove"
+                class="btn cart-remove text-white"
               >
                 x
               </button>

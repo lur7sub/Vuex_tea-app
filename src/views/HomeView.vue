@@ -1,13 +1,7 @@
 <template>
   <div class="container">
     <!-- 輪播圖片 -->
-    <div>
-      <carousel>
-        <slide></slide>
-        <slide></slide>
-        <slide></slide>
-      </carousel>
-    </div>
+
     <!-- 季節商品 -->
     <h2 v-if="$store.state.maxT > 24" class="my-3 p-0">春夏茶款</h2>
     <h2 v-else class="my-3 p-0">秋冬茶款</h2>
@@ -35,6 +29,15 @@ import ProductCard from "@/components/ProductCard.vue";
 export default {
   components: {
     ProductCard,
+  },
+  data() {
+    return {
+      slides: [
+        "../assets/img/first.jpg",
+        "../assets/img/second.jpg",
+        "../assets/img/third.jpg",
+      ],
+    };
   },
 };
 </script>

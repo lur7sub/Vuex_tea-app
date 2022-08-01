@@ -7,7 +7,7 @@
     width: 25rem;
     height: 100%;
     // 背景
-    background-color: #B5CAA0;
+    background-color: #a1b191;
     padding: 2.25rem 2.25rem;
 }
 
@@ -36,9 +36,9 @@
 }
 
 .cart-total {
-    position: fixed;
+    position: absolute;
     bottom: 2.25rem;
-    left: 47.75rem;
+    font-size: 1.5rem;
 }
 
 .cart-quantity {
