@@ -1,0 +1,47 @@
+.cart {
+    // 定位
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    // 長寬
+    width: 25rem;
+    height: 100%;
+    // 背景
+    background-color: #B5CAA0;
+    padding: 2.25rem 2.25rem;
+}
+
+.cart-title {
+    font-size: 1.5rem;
+}
+
+.cart-close {
+    border: 0px;
+    background: transparent;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    position: fixed;
+    top: 2.25rem;
+    right: 2.25rem;
+}
+
+.cart-table {
+    width: 100%;
+    font-size: 1rem;
+}
+
+.cart-remove {
+    background-color: transparent;
+    border: 0px;
+}
+
+.cart-total {
+    position: fixed;
+    bottom: 2.25rem;
+    left: 47.75rem;
+}
+
+.cart-quantity {
+    position: relative;
+    left: 0.7rem;
+}

@@ -21,7 +21,7 @@
         </button></span
       >
       <button
-        @click="addToCart(product.name, quantity)"
+        @click="$store.commit('addToCart', [product.name, this.quantity])"
         class="btn add-to-cart"
       >
         加入購物車
@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  props: ["product", "addToCart"],
+  props: ["product"],
   data() {
     return {
       quantity: 0,

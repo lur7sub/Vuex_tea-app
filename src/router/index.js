@@ -1,12 +1,18 @@
 import { createRouter, createWebHistory } from "vue-router";
-import BestSeller from "../views/BestSeller.vue";
+import HomeView from "../views/HomeView.vue";
+import TeaPairingView from "../views/TeaPairingView.vue";
 import ProductsView from "../views/ProductsView.vue";
 
 const routes = [
   {
     path: "/",
-    name: "best-seller",
-    component: BestSeller,
+    name: "home",
+    component: HomeView,
+  },
+  {
+    path: "/tea-pairing",
+    name: "tea-pairing",
+    component: TeaPairingView,
   },
   {
     path: "/products",
