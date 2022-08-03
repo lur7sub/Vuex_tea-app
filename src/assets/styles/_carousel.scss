@@ -1,0 +1,16 @@
+.swiper {
+    --swiper-pagination-color: #fff;
+    height: 88vh;
+}
+
+.carousel-img {
+    opacity: 0.6;
+}
+
+.text-carousel {
+    z-index: 2;
+    position: absolute;
+    left: 48%;
+    top: 45%;
+    background-color: rgb(0, 0, 0, 0.2);
+}

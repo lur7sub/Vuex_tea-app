@@ -25,7 +25,6 @@
             <td>
               {{ $store.state.inventory.find((i) => i.name === item).price }}
             </td>
-
             <td class="cart-quantity">{{ quantity }}</td>
             <!-- 小計 -->
             <!-- cart 沒有價錢 要從 inventory取得 -->
@@ -48,9 +47,10 @@
         </tbody>
       </table>
       <!-- 如果cart{}裡面沒東西 => 顯示 -->
-      <p v-if="!Object.keys($store.state.cart).length" class="my-4">
+      <p v-show="!Object.keys($store.state.cart).length" class="my-4">
         目前沒有商品
       </p>
+      <!-- 總金額 -->
       <div class="cart-total">
         <span>
           <strong>總計：</strong>
@@ -58,6 +58,16 @@
           {{ $store.getters.cartTotal }} 元
         </span>
       </div>
+      <!-- 訂購 -->
+      <router-link to="/orders" class="nav-text text-white">
+        <button
+          v-show="Object.keys($store.state.cart).length"
+          @click="toggle"
+          class="btn btn-light cart-submit btn-sm"
+        >
+          訂購
+        </button>
+      </router-link>
     </div>
   </aside>
 </template>

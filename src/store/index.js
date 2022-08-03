@@ -69,13 +69,37 @@ export default createStore({
     removeItem(state, name) {
       delete state.cart[name];
     },
+    // 增加數量
+    increaseQuantity(state, name) {
+      state.cart[name]++;
+    },
+    // 減少數量
+    decreaseQuantity(state, name) {
+      if (state.cart[name] > 1) state.cart[name]--;
+    },
+    // 清空購物車
+    clearCart(state) {
+      state.cart = {};
+    },
   },
   actions: {
     getWeather({ commit }) {
       const yyyy = new Date().getFullYear();
-      const mm = "0" + (new Date().getMonth() + 1);
-      const dd = new Date().getDate() + 1;
-      const today = `http://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-13748D92-B0B0-42F6-BAD1-04932D02398A&format=JSON&locationName=%E8%87%BA%E5%8C%97%E5%B8%82&elementName=&startTime=${yyyy}-${mm}-${dd}T06%3A00%3A00`;
+      const mm = (function () {
+        if (new Date().getMonth() + 1 < 10) {
+          return "0" + (new Date().getMonth() + 1);
+        } else {
+          return new Date().getMonth() + 1;
+        }
+      })();
+      const dd = (function () {
+        if (new Date().getDate() + 1 < 10) {
+          return "0" + (new Date().getDate() + 1);
+        } else {
+          return new Date().getDate() + 1;
+        }
+      })();
+      const today = `https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-13748D92-B0B0-42F6-BAD1-04932D02398A&format=JSON&locationName=%E8%87%BA%E5%8C%97%E5%B8%82&elementName=&startTime=${yyyy}-${mm}-${dd}T06%3A00%3A00`;
       axios.get(today).then((res) => {
         commit("getWeather", res.data.records.location[0]);
       });

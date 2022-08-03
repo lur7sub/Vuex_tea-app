@@ -7,10 +7,16 @@ import store from "./store";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-import { faCloudRain, faCartShopping } from "@fortawesome/free-solid-svg-icons";
-library.add(faCloudRain, faCartShopping);
+import {
+  faCloudRain,
+  faCartShopping,
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+library.add(faCloudRain, faCartShopping, faChevronRight, faChevronLeft);
 // bootstarp
-import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.css";
+
 // scss
 import "./assets/styles/style.scss";
 
